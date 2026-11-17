@@ -25,4 +25,8 @@ Question generation currently uses sentence-based fill-in-the-blank extraction, 
 
 ## Hosting
 
+For Vercel, import `ciciofthe50/Operation-Lock-In` with the repository root as Root Directory. The included `vercel.json` selects the static app in `dist/` and runs the core checks before deployment. No environment variables or dependencies are required. Link the GitHub repository to deploy future pushes automatically. Configure Vercel Deployment Protection if owner-only access is desired; the private Sites access policy does not carry over to Vercel.
+
+Export a backup from your existing study app before switching to the Vercel URL, then restore it there. Browser storage is separate for each domain.
+
 `.openai/hosting.json` identifies the private Sites deployment. The GitHub source repository is maintained independently from the Sites deployment repository.
