@@ -21,7 +21,13 @@ Extracted text can be corrected before importing. PDF.js, Mammoth and Tesseract 
 
 Library and progress use localStorage on the current browser/origin. Export backups before clearing browser data, switching browsers, or moving between preview and the hosted URL. Uploaded files and personal study data are not committed to Git.
 
-Question generation currently uses sentence-based fill-in-the-blank extraction, not AI. Quizzes and flashcards reuse the saved question bank; recall is self-rated. AI-written exam questions, multiple-choice distractors and explanations require a future server integration with a securely stored AI credential. Never put an API key in browser code.
+Imports now open an editable review before saving questions. The analyzer detects numbered prompts, Q/A pairs, multiple-choice options, answer keys, definitions, and individual formulas, while filtering common instructions, name/date fields, and page numbers. Choose Auto, Test/quiz, Formula sheet, or Notes mode. Unrecognized or answerless items require an answer or must be excluded. CSV and JSON questions also go through review.
+
+Recognized formulas generate recall and worked application questions. Built-in worked examples cover Newton’s second law, Ohm’s law, momentum, weight, kinetic energy, density, and circle area. Other equations generate source-based recall prompts and a symbol/usage prompt requiring a user-supplied answer. This is deterministic recognition, not AI reasoning. Complex equations, multi-column PDFs, handwriting, and OCR symbol errors still require correction. It does not infer arbitrary test answers.
+
+Existing libraries are preserved. Open a material’s Generate review to optionally replace its older automatically generated questions, or delete individual questions in the bank. Export a backup before replacing older questions if you want to retain their recall history.
+
+Quizzes and flashcards reuse the reviewed bank; recall is self-rated. An AI integration remains future work. Never put an API key in browser code.
 
 ## Hosting
 
